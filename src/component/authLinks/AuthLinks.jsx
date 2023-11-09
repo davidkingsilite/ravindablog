@@ -7,7 +7,9 @@ import { signOut, useSession } from "next-auth/react";
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
 
-  const { status } = useSession();
+  const { data: session, status } = useSession();
+
+  const userEmail = session?.user?.email
 
   return (
     <>
@@ -20,6 +22,7 @@ const AuthLinks = () => {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
+            <p>signed in as {userEmail}</p>
           <span className={styles.link} onClick={signOut}>
             Logout
           </span>
