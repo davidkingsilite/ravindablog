@@ -46,6 +46,10 @@
   background-color: #5e4fff31;
 }
 
+.category.dav{
+  background-color: red;
+}
+
 .image {
   border-radius: 50%;
 }
